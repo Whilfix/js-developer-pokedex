@@ -45,3 +45,35 @@ loadMoreButton.addEventListener('click', () => {
         loadPokemonItens(offset, limit)
     }
 })
+
+// Dark Mode
+
+const changeThemeBtn = document.querySelector("#change-theme");
+
+//Toggle Dark Mode
+function toggleDarkMode(){
+    document.body.classList.toggle("dark-mode");
+}
+
+
+//Load Dark or Light Mode
+function loadTheme(){
+    const darkMode = localStorage.getItem("dark-mode");
+
+    if (darkMode) {
+        toggleDarkMode()
+    }
+}
+loadTheme()
+
+
+changeThemeBtn.addEventListener("change", function() {
+    toggleDarkMode();
+
+    //Save of Remove Dark Mode
+    localStorage.removeItem("dark-mode");
+
+    if(document.body.classList.contains("dark-mode")){
+        localStorage.setItem("dark-mode", 1);
+    }
+});

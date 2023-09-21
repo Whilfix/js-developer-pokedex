@@ -4,7 +4,29 @@
 }
 
 body {
-    background-color: #f6f8fc;
+    background: #f6f8fc;
+    transition: 0.3s;
+}
+
+#change-theme {
+    display: none;
+}
+
+i.bi-moon {
+    font-size: 25px;
+    width: 300px;
+}
+
+i.bi-sun {
+    font-size: 25px;
+    width: 300px;
+}
+
+.bi-sun {
+    display: block;
+}
+.bi-moon {
+    display: none;
 }
 
 .content {
@@ -12,6 +34,7 @@ body {
     height: 100vh;
     padding: 1rem;
     background-color: #fff;
+    box-shadow: 0 0 20px black;
 }
 
 @media screen and (min-width: 992px) {
@@ -22,3 +45,20 @@ body {
         border-radius: 1rem;
     }
 }
+
+/*Dark Theme */
+.dark-mode {
+    background-color: rgb(53, 52, 52);
+    color: white;
+}
+.dark-mode .content {
+    background-color: green;
+}
+
+.dark-mode .bi-sun {
+    display: none;
+}
+.dark-mode .bi-moon {
+    display: block;
+}
+    
